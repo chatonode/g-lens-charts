@@ -1,11 +1,3 @@
-// import { verticalBarChartData } from './chart-data'
-
-// import colorLib from '@kurkle/color'
-
-// export function transparentize(value, opacity) {
-//   var alpha = opacity === undefined ? 0.5 : 1 - opacity
-//   return colorLib(value).alpha(alpha).rgbString()
-// }
 
 export const CHART_COLORS = {
   red: 'rgb(255, 99, 132)',
@@ -57,7 +49,7 @@ function getWorkAreaData(data) {
 }
 
 export function getVerticalBarChartData(responseData) {
-  // todo: transform country enums into text representations like 'Spain', 'Turkey', 'Belgium', 'Netherlands'
+
   const labels = getCountryLabels(responseData)
 
   const workAreaData = getWorkAreaData(responseData)
@@ -114,10 +106,8 @@ export function getDoughnutChartData(responseData) {
   return doughnutChartData
 }
 
-// reportVisualization.js
 export async function loadReportData() {
   try {
-    // const response = await fetch('/api/reports/guide') // /all-organizations
     const response = await fetch(
       'https://genderlens4climate.com/all-organizations',
       {
@@ -133,29 +123,6 @@ export async function loadReportData() {
     return data
   } catch (err) {
     console.warn('Using dummy data due to error:', err)
-    // todo: implement error case
-    //
-    // Dummy data for demonstration
-    // return {
-    //   countryReport: [
-    //     { country: 'USA', count: 10 },
-    //     { country: 'Germany', count: 5 },
-    //   ],
-    //   sectorReport: [
-    //     { sector: 'Energy', count: 8 },
-    //     { sector: 'Agriculture', count: 7 },
-    //   ],
-    //   keywordReport: [
-    //     { keyword: 'sustainability', count: 12 },
-    //     { keyword: 'innovation', count: 9 },
-    //   ],
-    //   verticalBarChartReport: {
-    //     ...getDummyVerticalBarChartData(),
-    //   },
-    //   doughnutCharReport: {
-    //     ...getDummyDoughnutChartData(),
-    //   },
-    // }
   }
 }
 

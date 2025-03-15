@@ -8,22 +8,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <!-- Guide Button -->
-    <button id="guideButton">Guide</button>
-
-    <!-- Modal Structure -->
-    <div id="guideModal" class="modal hidden">
-      <div class="modal-content">
-        <span id="modalClose" class="close-button">&times;</span>
-        <div id="chartContainer">
-          <canvas id="countryChart"></canvas>
-          <canvas id="doughnutChart"></canvas>
-          <!-- <canvas id="keywordChart"></canvas> -->
-        </div>
-      </div>
+    <div id="chartContainer">
+      <canvas id="countryChart"></canvas>
+      <canvas id="doughnutChart"></canvas>
+      <!-- <canvas id="keywordChart"></canvas> -->
     </div>
-
     <!-- Load the event handler (ES6 modules) -->
-    <script type="module" src="modalEventHandler.js"></script>
+    <script type="module" src="eventHandler.js"></script>
   </body>
 </html>
